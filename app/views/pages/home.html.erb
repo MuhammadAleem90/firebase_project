@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row mt-5">
+		<h3><%= session[:data]["email"] %></h3>
+		<%=button_to "Logout", logout_path, class:"btn btn-danger" %>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<% @todos.each do |todo| %>
+		<div class="col-8 offset-2">
+			<h3><%= todo.title %></h3>
+		</div>
+		<h6><%= todo.author unless todo.author.nil? %></h6>
+		<% end %>
+	</div>
+
+</div>
